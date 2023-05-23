@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Bondage",
+    "price": "70$",
+    "url": "./images/bondage.webp",
+    "article": "25987456",
+    "color": "black"
+  },
+  {
+    "name": "Bracelets",
+    "price": "120$",
+    "url": "./images/bracelets.webp",
+    "article": "75213698",
+    "color": "black"
+  },
+  {
+    "name": "Cuffs",
+    "price": "110$",
+    "url": "./images/cuffs.webp",
+    "article": "23698521",
+    "color": "black"
+  },
+  {
+    "name": "Whip",
+    "price": "180$",
+    "url": "./images/whip.webp",
+    "article": "52169875",
+    "color": "black"
+  },
+  {
+    "name": "Pasties",
+    "price": "100$",
+    "url": "./images/pasties.webp",
+    "article": "75213699",
+    "color": "gold"
+  },
+  {
+    "name": "Corset",
+    "price": "80$",
+    "url": "./images/corset.webp",
+    "article": "58963279",
+    "color": "black"
+  },
+  {
+    "name": "Choker",
+    "price": "92$",
+    "url": "./images/choker.webp",
+    "article": "85423696",
+    "color": "black"
+  },
+  {
+    "name": "Flogger",
+    "price": "140$",
+    "url": "./images/flogger.webp",
+    "article": "85236987",
+    "color": "black"
+  },
+  {
+    "name": "Gag",
+    "price": "65$",
+    "url": "./images/gag.webp",
+    "article": "23569784",
+    "color": "red"
+  },
+  {
+    "name": "Kit",
+    "price": "1500$",
+    "url": "./images/kit.webp",
+    "article": "85236974",
+    "color": "gold"
+  },
+  {
+    "name": "Plug",
+    "price": "95$",
+    "url": "./images/plug.webp",
+    "article": "85238574",
+    "color": "white"
+  },
+  {
+    "name": "Hook",
+    "price": "50$",
+    "url": "./images/hook.webp",
+    "article": "85238575",
+    "color": "gold"
+  }
+]
