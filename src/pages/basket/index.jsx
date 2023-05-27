@@ -1,13 +1,14 @@
 import { Shop } from "../../components/shop";
 import { useSelector, useDispatch } from "react-redux";
 import Form from "../../components/form";
-import style from "./Basket.module.sass";
+import style from '../../components/shop/Shop.module.sass'
 import { changeTitle } from "../../redux/pages/app/actions";
-import { useEffect } from "react";
+import React, { useEffect} from "react";
 
 export function Basket() {
   const countBasket = useSelector(state => state.basket.basketArray);
   const dispatch = useDispatch();
+
   
   useEffect(() => {
     dispatch(changeTitle("Basket"));
@@ -15,7 +16,7 @@ export function Basket() {
   
   return (
     <>
-      <div className={`${style.basket}`}>
+      <div className={`${style.shop}`}>
         <Shop 
           key={JSON.stringify(countBasket)}
           className="delete"

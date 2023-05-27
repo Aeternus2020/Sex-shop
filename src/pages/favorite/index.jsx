@@ -2,6 +2,7 @@ import { Shop } from "../../components/shop";
 import { useSelector, useDispatch } from "react-redux";
 import { changeTitle } from "../../redux/pages/app/actions";
 import { useEffect } from "react";
+import style from "../../components/shop/Shop.module.sass"
 
 export function Favorite() {
   const countFavorite = useSelector(state => state.favorite.favoriteArray);
@@ -12,7 +13,7 @@ export function Favorite() {
   }, [dispatch]);
   
   return (
-    <> <div>
+    <> <div className={`${style.shop}`}>
     <Shop 
     key={JSON.stringify(countFavorite)}
     className="add"

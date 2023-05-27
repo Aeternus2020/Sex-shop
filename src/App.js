@@ -7,6 +7,9 @@ import { Routes, Route } from "react-router-dom";
 import Modal from "./components/modal";
 import styles from "./pages/home/Pages.module.sass";
 import { useSelector } from "react-redux";
+import React, { useState, createContext } from "react";
+
+export const ShopContext = React.createContext();
 
 function App() {
   const countBasket = useSelector(state => state.basket.basketArray);
@@ -15,6 +18,7 @@ function App() {
   const item = useSelector(state => state.showModal.item)
   const textBtn = useSelector(state => state.showModal.textBtn);
   const title = useSelector(state => state.title.text);
+  const [appearanceShop, setAppearanceShop] = useState('table');
 
   const stateSet = () => (
     isOpenModal ? <Modal 
@@ -32,11 +36,13 @@ function App() {
         </nav>
         </header>
         {stateSet()}
+    <ShopContext.Provider value={[appearanceShop,  setAppearanceShop]}>
     <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/basket" element={<Basket />} />
     </Routes>
+    </ShopContext.Provider>
   </>);
 }
 
