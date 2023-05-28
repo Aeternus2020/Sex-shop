@@ -6,7 +6,7 @@ import showModal from "../components/modal/reducers";
 import title from "../pages/app/reducers";
 import { composeEnhancers, middleware } from "./middleware";
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
     products,
     basket,
     favorite,

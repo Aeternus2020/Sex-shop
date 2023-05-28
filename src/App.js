@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Modal from "./components/modal";
 import styles from "./pages/home/Pages.module.sass";
 import { useSelector } from "react-redux";
-import React, { useState, createContext } from "react";
+import React, { useState} from "react";
 
 export const ShopContext = React.createContext();
 
