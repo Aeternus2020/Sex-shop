@@ -22,11 +22,11 @@ export function Shop(props)  {
       return (
         <>
         {buttonStyle && 
-        <div className={`${styles.style}`}>
+        <div className={`${styles.style}`} data-testid={`buttons-style-${props.id}`}>
           <button onClick={()=>changeStyleShop('list')}>List</button>
           <button onClick={()=>changeStyleShop('')}>Table</button>
         </div>}
-          <ul className={`${styles[style]}`}>
+          <ul className={`${styles[style]}`} data-testid={`card-list-${props.id}`}>
           {products?.map((item) => (
             <ProductCard 
             key={item.article}

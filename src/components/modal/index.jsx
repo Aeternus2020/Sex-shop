@@ -41,8 +41,8 @@ export default function Modal(props) {
 
   return (
     <>
-      <div ref={htmlRef} className={`${style.html}`}>
-        {modal && (<div className={`${style.modal}`} ref={modalRef}>
+      <div ref={htmlRef} className={`${style.html}`} data-testid={`modalHtml-${props.id}`}>
+        {modal && (<div className={`${style.modal}`} ref={modalRef} data-testid={`modal-${props.id}`}>
             <div className={`${style.main}`}>
             {headerModal} {nameModal} {textModal}
             </div>

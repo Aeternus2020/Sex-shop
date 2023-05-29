@@ -9,7 +9,7 @@ import styles from "./pages/home/Pages.module.sass";
 import { useSelector } from "react-redux";
 import React, { useState} from "react";
 
-export const ShopContext = React.createContext();
+export const ShopContext = React.createContext(['table', () => {}]);
 
 function App() {
   const countBasket = useSelector(state => state.basket.basketArray);

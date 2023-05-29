@@ -14,11 +14,11 @@ export function ProductCard(props) {
         <div className={`${styles.name}`}>{props.item.name}</div>
         <img src={props.item.url} alt={props.item.name} /> 
         <div className={`${styles.price}`}>
-        <div>Price: {props.item.price}</div>
-        <StarSolid 
-            favoriteArray={countFavorite} 
-            item={props.item} 
-            star={star}/>
+            <div>Price: {props.item.price}</div>
+            <StarSolid 
+                favoriteArray={countFavorite} 
+                item={props.item} 
+                star={star}/>
         </div>
         {buttonCross && 
             <ButtonModal 

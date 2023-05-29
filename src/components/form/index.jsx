@@ -6,7 +6,7 @@ import { validationSchema } from "./validation";
 import { useDispatch } from "react-redux";
 import { orderBasket } from "../../redux/pages/basket/actions";
 
-export default function Form() {
+export default function Form(props) {
     const dispatch = useDispatch();
 
     const formik = useFormik({
@@ -28,7 +28,7 @@ export default function Form() {
         },
     })
     return(
-        <form onSubmit={formik.handleSubmit} className={`${style.form}`}>
+        <form onSubmit={formik.handleSubmit} className={`${style.form}`} data-testid={`form-${props.id}`}>
             <div className={`${style.title}`}>Ordering</div>
             <div><input
                 type="text"
