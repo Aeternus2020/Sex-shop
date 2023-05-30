@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Modal 1`] = `
+<div
+  className="html"
+  data-testid="modalHtml-4"
+/>
+`;
+
+exports[`snapshot Modal 1`] = `
+<div
+  className="html"
+  data-testid="modalHtml-4"
+/>
+`;

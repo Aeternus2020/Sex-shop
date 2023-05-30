@@ -22,7 +22,7 @@ export default function StarSolid(props) {
   return (
     <>
         {
-      <svg className={`${style.svg}`}
+      <svg className={`${style.svg}`} data-testid={`favoriteStar-${props.id}`}
         width="25"
         height="25"
         viewBox="0 0 20 20"

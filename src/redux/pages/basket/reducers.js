@@ -15,8 +15,7 @@ export default function basket(state = defaultState, action) {
       return {
         ...state,
         basketArray: state.basketArray.filter(
-          (item) => JSON.stringify(item) !== JSON.stringify(action.payload)
-        ),
+          (item) => JSON.stringify(item) !== JSON.stringify(action.payload))
       };
       case ORDER_BASKET:
         return {

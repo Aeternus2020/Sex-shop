@@ -1,8 +1,9 @@
-import { ProductCard } from "../components/shop/productCard";
-import Shop from "../components/shop";
+import { ProductCard } from "../../components/shop/productCard";
+import Shop from "../../components/shop";
 import { render, screen, cleanup } from "@testing-library/react";
-import { store } from "../redux/store/store";
+import { store } from "../../redux/store/store";
 import { Provider } from "react-redux";
+import renderer from 'react-test-renderer';
 
 afterEach(cleanup);
 
@@ -35,4 +36,13 @@ test('Test basic props in Shop', () => {
     expect(screen.getAllByRole('button')[1]).toHaveTextContent('Table');
     expect(screen.getByTestId('buttons-style-2')).toBeInTheDocument();
     expect(screen.getByTestId('card-list-2')).toBeInTheDocument();
+})
+
+test('Test snapshot Shop', () => {
+    const tree = renderer.create(
+    <Provider store={store} >
+        <Shop id={2}/>
+    </Provider>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
 })

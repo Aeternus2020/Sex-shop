@@ -5,7 +5,7 @@ import style from '../../components/shop/Shop.module.sass'
 import { changeTitle } from "../../redux/pages/app/actions";
 import React, { useEffect} from "react";
 
-export function Basket() {
+export function Basket(props) {
   const countBasket = useSelector(state => state.basket.basketArray);
   const dispatch = useDispatch();
 
@@ -16,14 +16,15 @@ export function Basket() {
   
   return (
     <>
-      <div className={`${style.shop}`}>
+      <div className={`${style.shop}`} data-testid={`basketPage-${props.id}`}>
         <Shop 
           key={JSON.stringify(countBasket)}
           className="delete"
           productsFile={countBasket}
           textbtn="&times;"
+          id={props.id}
         />
-        <Form/>
+        <Form id={props.id}/>
       </div>
     </>
   );

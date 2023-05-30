@@ -1,7 +1,8 @@
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
-import Form from "../components/form";
+import Form from "../../components/form";
 import { Provider } from "react-redux";
-import { store } from "../redux/store/store";
+import { store } from "../../redux/store/store";
+import renderer from 'react-test-renderer';
 
 afterEach(cleanup);
 
@@ -19,3 +20,12 @@ test("Test Form", () => {
     expect(screen.getAllByRole("textbox")).toHaveLength(4);
     fireEvent.click(screen.getByRole("button"));
 });
+
+test('Test snapshot Form', () => {
+    const tree = renderer.create(
+    <Provider store={store} >
+        <Form id={3}/>
+    </Provider>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+})

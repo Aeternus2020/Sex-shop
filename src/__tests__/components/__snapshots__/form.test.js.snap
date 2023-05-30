@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Form 1`] = `
+<form
+  className="form"
+  data-testid="form-3"
+  onSubmit={[Function]}
+>
+  <div
+    className="title"
+  >
+    Ordering
+  </div>
+  <div>
+    <input
+      id="firstName"
+      name="firstName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="FirstName"
+      type="text"
+      value=""
+    />
+  </div>
+  <div>
+    <input
+      id="lastName"
+      name="lastName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="LastName"
+      type="text"
+      value=""
+    />
+  </div>
+  <div>
+    <input
+      id="age"
+      name="age"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Age"
+      type="number"
+      value=""
+    />
+  </div>
+  <div>
+    <input
+      id="address"
+      name="address"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Address"
+      type="text"
+      value=""
+    />
+  </div>
+  <div>
+    <input
+      id="phone"
+      inputMode="numeric"
+      name="phone"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseUp={[Function]}
+      type="text"
+      value="+_ (___) ____ ___"
+    />
+  </div>
+  <button
+    type="submit"
+  >
+    Checkout
+  </button>
+</form>
+`;

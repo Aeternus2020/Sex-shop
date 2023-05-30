@@ -8,7 +8,6 @@ export default function title(state = defaultState, action) {
   switch (action.type) {
     case TITLE_PAGE:
       return {
-        ...state,
         text: action.payload,
       };
     default:

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Shop 1`] = `
+Array [
+  <div
+    className="style"
+    data-testid="buttons-style-2"
+  >
+    <button
+      onClick={[Function]}
+    >
+      List
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Table
+    </button>
+  </div>,
+  <ul
+    className="table"
+    data-testid="card-list-2"
+  />,
+]
+`;

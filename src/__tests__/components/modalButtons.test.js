@@ -1,7 +1,8 @@
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
-import ButtonModal from "../components/buttonModal";
+import ButtonModal from "../../components/buttonModal";
 import { Provider } from "react-redux";
-import { store } from "../redux/store/store";
+import { store } from "../../redux/store/store";
+import renderer from 'react-test-renderer';
 
 afterEach(cleanup);
 
@@ -23,3 +24,12 @@ test("Test ModalButton", () => {
     expect(screen.getByTestId("buttons-modal-3")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button"));
 });
+
+test('Test snapshot ButtonModal', () => {
+    const tree = renderer.create(
+    <Provider store={store} >
+        <ButtonModal id={3}/>
+    </Provider>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+})

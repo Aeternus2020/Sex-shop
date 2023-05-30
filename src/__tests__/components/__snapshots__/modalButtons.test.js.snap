@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot ButtonModal 1`] = `
+<button
+  className="undefined"
+  data-testid="buttons-modal-3"
+  onClick={[Function]}
+/>
+`;

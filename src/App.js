@@ -11,7 +11,7 @@ import React, { useState} from "react";
 
 export const ShopContext = React.createContext(['table', () => {}]);
 
-function App() {
+function App(props) {
   const countBasket = useSelector(state => state.basket.basketArray);
   const countFavorite = useSelector(state => state.favorite.favoriteArray);
   const isOpenModal= useSelector(state => state.showModal.modal)
@@ -27,18 +27,18 @@ function App() {
 );
 
   return (<>
-        <header>
+      <ShopContext.Provider value={[appearanceShop,  setAppearanceShop]}>
+        <header data-testid={`appPageHeader-${props.id}`}>
         <div>{title}</div>
-        <nav>
-          <NavLink to="/basket" style={{ marginRight: "10px", textDecoration: "none"} }>&#128465; {countBasket.length}</NavLink>
-          <NavLink to="/favorite" style={{ marginRight: "10px" , textDecoration: "none"}}>&#9733; {countFavorite.length}</NavLink>
-          <NavLink to="/" style={{ marginRight: "10px" , textDecoration: "none"}}>&#127968;</NavLink>
-        </nav>
+          <nav>
+            <NavLink to="/basket" style={{ marginRight: "10px", textDecoration: "none"} }>&#128465; {countBasket.length}</NavLink>
+            <NavLink to="/favorite" style={{ marginRight: "10px" , textDecoration: "none"}}>&#9733; {countFavorite.length}</NavLink>
+            <NavLink to="/" style={{ marginRight: "10px" , textDecoration: "none"}}>&#127968;</NavLink>
+          </nav>
         </header>
         {stateSet()}
-    <ShopContext.Provider value={[appearanceShop,  setAppearanceShop]}>
     <Routes>
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Home id={props.id}/>}/>
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/basket" element={<Basket />} />
     </Routes>
