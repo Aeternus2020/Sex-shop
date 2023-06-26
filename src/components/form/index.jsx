@@ -5,6 +5,7 @@ import { PatternFormat } from "react-number-format";
 import { validationSchema } from "./validation";
 import { useDispatch } from "react-redux";
 import { orderBasket } from "../../redux/pages/basket/actions";
+import { openModalBuy } from "../../redux/components/modal/actions";
 
 export default function Form(props) {
     const dispatch = useDispatch();
@@ -19,7 +20,8 @@ export default function Form(props) {
         },
         validationSchema,
         onSubmit: (values) => {
-            dispatch(orderBasket(values))
+            dispatch(orderBasket())
+            dispatch(openModalBuy(values))
             values.firstName = "";
             values.lastName = "";
             values.age = "";

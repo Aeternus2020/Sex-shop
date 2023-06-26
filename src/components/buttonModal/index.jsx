@@ -11,7 +11,7 @@ function ButtonModal(props) {
   };
 
   return (
-    <button className={`${styles[props.className]}`}text={props.text} onClick={changeStore} data-testid={`buttons-modal-${props.id}`}>
+    <button className={`${styles[props.className]}`} text={props.text} onClick={changeStore} data-testid={`buttons-modal-${props.id}`}>
       {props.textbtn}
     </button>
   );

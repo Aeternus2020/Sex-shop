@@ -10,9 +10,14 @@ export const addItem = (item) => {
     }
     const newBasketArray = [...state.basket.basketArray, item];
     localStorage.setItem("basketArray", JSON.stringify(newBasketArray));
+    
+    const productSum = newBasketArray.reduce((sum, item) => {
+      return sum + parseInt(item.price);
+    }, 0);
+    localStorage.setItem("productSum", JSON.stringify(productSum));
     dispatch({
       type: ADD,
-      payload: item,
+      payload: {item, productSum}
     });
   };
 };
@@ -24,9 +29,14 @@ export const deleteItem = (item) => {
       (existingItem) => JSON.stringify(existingItem) !== JSON.stringify(item)
     );
     localStorage.setItem("basketArray", JSON.stringify(updatedBasketArray));
+
+    const updatedProductSum = updatedBasketArray.reduce((sum, item) => {
+      return sum + parseInt(item.price);
+    }, 0);
+    localStorage.setItem("productSum", JSON.stringify(updatedProductSum));
     dispatch({
       type: DELETE,
-      payload: item,
+      payload: {item, updatedProductSum}
     });
   };
 };
@@ -37,19 +47,14 @@ export function changeBasket(textBtn, item) {
   }
 }
 
-export function orderBasket(value) {
+export function orderBasket() {
   return function (dispatch, getState) {
     const state = getState();
     const productList =[];
     state.basket.basketArray.map((item) => productList.push(item.name));
     const newBasketArray = [] 
     localStorage.setItem("basketArray", JSON.stringify(newBasketArray));
-    let text = `Dear, ${value.firstName} ${value.lastName} (${value.age}). 
-    Thank you for your purchase.
-    Your shopping list: ${productList}.
-    Your order will be sent to ${value.address}.
-    The parcel number will be sent to the phone number ${value.phone} as soon as the order is shipped.`
-    console.log(text);
+    localStorage.setItem("productSum", JSON.stringify(0));
     dispatch({
       type: ORDER_BASKET,
       payload: newBasketArray

@@ -7,6 +7,7 @@ import React, { useEffect} from "react";
 
 export function Basket(props) {
   const countBasket = useSelector(state => state.basket.basketArray);
+  const sum = useSelector(state => state.basket.sum);
   const dispatch = useDispatch();
 
   
@@ -24,7 +25,10 @@ export function Basket(props) {
           textbtn="&times;"
           id={props.id}
         />
+        <div>
         <Form id={props.id}/>
+        <div className={`${style.sum}`}>Basket amount: {sum}$</div>
+      </div>
       </div>
     </>
   );

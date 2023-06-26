@@ -1,4 +1,4 @@
-import { OPEN_MODAL_ADD, OPEN_MODAL_DELETE, CLOSE_MODAL } from "./actions";
+import { OPEN_MODAL_ADD, OPEN_MODAL_DELETE, CLOSE_MODAL, OPEN_MODAL_BUY, OPEN_MODAL_REPEAT } from "./actions";
 
 export const defaultState = {
     buttonCansel: false,
@@ -41,6 +41,14 @@ export default function showModal(state = defaultState, action) {
         modal: false,
         button: true
         };
+    case OPEN_MODAL_BUY:
+        return {
+        modal: true,
+        name: action.payload.name,
+        header: "Dear ",
+        text: "thank you for your purchase. Our manager will contact you shortly.",
+        textBtn: "ok"
+        }
     default:
         return state;
     }
