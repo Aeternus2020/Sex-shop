@@ -1,4 +1,4 @@
-# Cards Step Project
+# Sex shop
 
 
 Created by: [Olena Hodyna](https://github.com/Aeternus2020)
